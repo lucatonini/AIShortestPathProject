@@ -1,0 +1,19 @@
+#include <iostream>
+#include "ProblemRead.h"
+#include <algorithm>
+
+int main(){
+    std::cout << "Main of the project will go here." << std::endl;
+	Problem problem(12);
+	problem.ReadFile();
+	std::cout<<std::endl << std::endl;
+<<<<<<< working copy
+	problem.WriteFile();
+	//system("pause");
+=======
+//	problem.WriteFile();
+	problem.search();
+	system("pause");
+>>>>>>> destination
+	return 0;
+}

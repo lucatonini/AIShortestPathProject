@@ -1,0 +1,84 @@
+#include "ProblemRead.h"
+void Problem::ReadFile() {
+	std::ifstream problem;
+	problem.open("/home/luca/ai-shortest-path-finder-comp-415/Resources/problem.txt");//Directory WILL CHANGE
+	if (problem.is_open()) {
+
+		std::string  path;
+		int i = 0;
+		list2.push_back({});
+
+		list.push_back({});
+		while (problem >> path) {
+			auto &back = list.back();
+			auto &listback = list2.back();
+			std::string value(path.begin() + 1, path.end());
+			if (path[0] != 'w') {
+				if (path[0] == 'x')
+					back.x = std::stoi(value);
+				else if (path[0] == 'y')
+					back.y = std::stoi(value);
+				
+			}
+			else {
+				back.cost = std::stoi(value);
+				if (back.x != n-1) {
+					listback.push_back(back);
+				}
+				else
+				{
+					listback.push_back(back);
+					list2.push_back({});
+				}
+				list.push_back({});
+
+
+			}
+		
+			
+
+		}
+
+	}
+		
+	else
+		std::cout << "cannot open";
+
+
+
+}
+void Problem::WriteFile() {
+	for (auto &l : list2) {
+		for(auto &l2:l)
+		std::cout << "x = " << l2.x << " y = " << l2.y << " cost = " << l2.cost << " check = " << l2.check << std::endl;
+	}
+	
+}
+<<<<<<< working copy
+=======
+
+void Problem::search(Cell start,Cell end) {
+	movement direction;
+	AddElement(start);
+	std::cout << "Search unit test " << std::endl;
+	if (list2.empty())
+	{
+		std::cout << "list is empty can not search anything" << std::endl;
+		return;
+	}
+	for (int y = 0; y < list2.size(); y++) {
+		for (int x = 0; x < list2[y].size(); x++) {
+			// here we have to control valid or not valid movement for each 
+			// then we have to push open list other wise we can not trace all path.
+
+			
+			std::cout << "[" << x << "] [" << y << "]  cost =" << list2[y][x].cost << std::endl;
+
+
+		}
+		std::cout << std::endl;
+
+	}
+
+
+}>>>>>>> destination
