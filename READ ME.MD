@@ -5,6 +5,6 @@ https://github.com/lucatonini/AIShortestPathProject
 
 If you have any problems trying to compile the code or there is somethind wrong when you are compiling please don't hesitate to contact me.
 
-luca.r.tonini@gmail.com
+www.lrtonini.com
 
 Luca
